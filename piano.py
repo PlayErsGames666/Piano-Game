@@ -73,6 +73,18 @@ while running:
         pygame.draw.rect(screen, color, rect)
         pygame.draw.rect(screen, (0, 0, 0), rect, 2)
 
+        # Getting name of the key
+        key_name = pygame.key.name(key)
+
+        # Print letter
+        key_text = font.render(key_name.upper(), True, (0, 0, 0))
+
+        # Set middle position
+        text_rect = key_text.get_rect(center=(rect[0] + rect[2] // 2,
+                                              rect[1] + rect[3] // 2))
+
+        screen.blit(key_text, text_rect)
+
     text = font.render("PlayErsGames Piano Game", True, (164, 164, 179))
     screen.blit(text, (117, 50))
 
@@ -84,6 +96,5 @@ pygame.quit()
 
 
 # ТЗ на будующее:
-# 1. Проработать отжатие клавишы, потому что цвет клавиши не меняется.
-# 2. Сделать так чтобы на каждой клавише было название буквы на которой она работает.
-# 3. Добавить для клавиш название нот.
+
+# 1. Добавить для клавиш название нот.
