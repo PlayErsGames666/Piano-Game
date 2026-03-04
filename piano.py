@@ -8,7 +8,7 @@ mixer.init()
 
 #Create window
 screen = pygame.display.set_mode((600, 400))
-pygame.display.set_caption("PlayErsGmaes Piano Game")
+pygame.display.set_caption("PlayErsGames Piano Game")
 
 clock = pygame.time.Clock()
 font = pygame.font.SysFont("Arial", 40)
@@ -61,8 +61,8 @@ while running:
                 keymap[event.key].play()
                 pressed_keys.add(event.key)
 
-            if event.type == pygame.KEYUP:
-                pressed_keys.discard(event.key)
+        if event.type == pygame.KEYUP: #Check for pressing a key
+            pressed_keys.discard(event.key)
 
     for key, rect in key_positions.items():
         if key in pressed_keys:
@@ -81,3 +81,9 @@ while running:
 
 #End cycle
 pygame.quit()
+
+
+# ТЗ на будующее:
+# 1. Проработать отжатие клавишы, потому что цвет клавиши не меняется.
+# 2. Сделать так чтобы на каждой клавише было название буквы на которой она работает.
+# 3. Добавить для клавиш название нот.
