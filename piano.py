@@ -14,13 +14,13 @@ clock = pygame.time.Clock()
 font = pygame.font.SysFont("Arial", 40)
 
 #Downloading sounds from nearest directory
-do = mixer.Sound('../notes/do.wav')
-re = mixer.Sound('../notes/re.wav')
-mi = mixer.Sound('../notes/mi.wav')
-fa = mixer.Sound('../notes/fa.wav')
-sol = mixer.Sound('../notes/sol.wav')
-lja = mixer.Sound('../notes/lja.wav')
-si = mixer.Sound('../notes/si.wav')
+do = mixer.Sound('notes/do.wav')
+re = mixer.Sound('notes/re.wav')
+mi = mixer.Sound('notes/mi.wav')
+fa = mixer.Sound('notes/fa.wav')
+sol = mixer.Sound('notes/sol.wav')
+lja = mixer.Sound('notes/lja.wav')
+si = mixer.Sound('notes/si.wav')
 
 #Coordinate of keyboard
 key_positions = {
