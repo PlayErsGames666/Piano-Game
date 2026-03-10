@@ -44,6 +44,18 @@ keymap = {
     pygame.K_u: si
 }
 
+#Making note letter
+note_names = {
+    pygame.K_q: "DO",
+    pygame.K_w: "RE",
+    pygame.K_e: "MI",
+    pygame.K_r: "FA",
+    pygame.K_t: "SOL",
+    pygame.K_y: "LA",
+    pygame.K_u: "SI"
+}
+
+
 pressed_keys = set()
 #Variable for Main cycle
 running = True
@@ -79,11 +91,19 @@ while running:
         # Print letter
         key_text = font.render(key_name.upper(), True, (0, 0, 0))
 
+        # Print note name
+        note_text = font.render(note_names[key], True, (50, 50, 50))
+
         # Set middle position
         text_rect = key_text.get_rect(center=(rect[0] + rect[2] // 2,
                                               rect[1] + rect[3] // 2))
 
         screen.blit(key_text, text_rect)
+
+        note_rect = note_text.get_rect(center=(rect[0] + rect[2] // 2,
+                                               rect[1] + rect[3] // 2 + 50))
+
+        screen.blit(note_text, note_rect)
 
     text = font.render("PlayErsGames Piano Game", True, (164, 164, 179))
     screen.blit(text, (117, 50))
@@ -93,8 +113,3 @@ while running:
 
 #End cycle
 pygame.quit()
-
-
-# ТЗ на будующее:
-
-# 1. Добавить для клавиш название нот.
