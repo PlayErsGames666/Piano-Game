@@ -1,6 +1,17 @@
 import pygame
+import os
+import sys
 
 from pygame import mixer
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 
 #Inicialization
 pygame.init()
@@ -14,13 +25,13 @@ clock = pygame.time.Clock()
 font = pygame.font.SysFont("Arial", 40)
 
 #Downloading sounds from nearest directory
-do = mixer.Sound('notes/do.wav')
-re = mixer.Sound('notes/re.wav')
-mi = mixer.Sound('notes/mi.wav')
-fa = mixer.Sound('notes/fa.wav')
-sol = mixer.Sound('notes/sol.wav')
-lja = mixer.Sound('notes/lja.wav')
-si = mixer.Sound('notes/si.wav')
+do = mixer.Sound(resource_path('notes/do.wav'))
+re = mixer.Sound(resource_path('notes/re.wav'))
+mi = mixer.Sound(resource_path('notes/mi.wav'))
+fa = mixer.Sound(resource_path('notes/fa.wav'))
+sol = mixer.Sound(resource_path('notes/sol.wav'))
+lja = mixer.Sound(resource_path('notes/lja.wav'))
+si = mixer.Sound(resource_path('notes/si.wav'))
 
 #Coordinate of keyboard
 key_positions = {
