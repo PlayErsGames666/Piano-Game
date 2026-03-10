@@ -124,3 +124,8 @@ while running:
 
 #End cycle
 pygame.quit()
+
+
+# ТЗ
+
+# Убрать нахуй консоль сзади, при запуске piano.exe
